@@ -1,42 +1,21 @@
 "use strict";
-let number = 10;
-//Замыкания (сама функция, вместе с тем что ей доступно)
-function showMessage(text) {
-    console.log(text);
-    //let number = 20;
-    console.log(number);
-
-}
-
-showMessage("Hello!!!");
-console.log(number);
-
-const server = function(){
-    console.log('server start...');
+//Rest = оператор и знаечния по умолчанию
+//rest оператор, обратное преобразование spread
+const log = function (a, b, ...other){
+    console.log(a);
+    console.log(b);
+    console.log(other);
 
 };
 
-server();
+log('test1', 'test2', 'test3', 'test4');
 
-const calc = (x, y) => x+y;
-//const calc = (x, y) => {
-//  return x+y    
-//};
-
-console.log(calc(10,5));
-
-//Задание приветствие и число п
-
-"use strict";
-let number = 3.14;
-function showMessage(text) {
-    console.log(text);
-    console.log(number);
-
+//параметры по умолчанию
+function calcOrDouble (first, second = 2){
+    //second = second || 2; //раньше использовали такой способ
+    return first*second;
 }
 
-showMessage("Hello!!!");
-console.log(number);
+console.log(calcOrDouble(5));
 
-
-server();
+//Json и глубокое клонирование объектов 
